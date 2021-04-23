@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Splittymon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  </head>
+  <body>
+
+    <!-- navbar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{{ url_for('upload_file')}}">
+          <img src="{{ url_for('static', filename='img/digimon.png')}}">
+          <!-- Photo is from this link: https://www.kindpng.com/picc/m/263-2639829_pixel-art-digimon-agumon-hd-png-download.png -->
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="{{ url_for('upload_file')}}">
+            Home
+          </a>
+
+          <a class="navbar-item" href="{{ url_for('pro')}}">
+            Splittymon Pro
+          </a>
+        </div>
+      </div>
+
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <p class="subtitle">Thanks for using Splittymon!</p>
+        <p class="subtitle">Your download for <strong>{{ zipfile_name }}</strong> is prepared below:</p>
+        <button class="button is-success is-large" type="submit" onclick="window.open('{{ filename }}')">Download</button>
+
+  </body>
+</html>
